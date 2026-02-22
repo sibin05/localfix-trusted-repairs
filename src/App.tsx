@@ -18,12 +18,17 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const getBasename = () => {
+  // Get basename from environment variable set during build
+  return import.meta.env.VITE_BASE_PATH || "/";
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/localfix-trusted-repairs/">
+      <BrowserRouter basename={getBasename()}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
