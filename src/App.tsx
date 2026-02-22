@@ -23,7 +23,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/localfix-trusted-repairs/">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
