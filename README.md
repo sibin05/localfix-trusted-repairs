@@ -1,73 +1,129 @@
-# Welcome to your Lovable project
+# LocalFix - Trusted Repair Services Platform
 
-## Project info
+A full-featured web application connecting customers with verified local repair technicians for various services including bike, mobile, laptop, AC, plumbing, and electrical repairs.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Project Overview
 
-## How can I edit this code?
+LocalFix is a modern React application built with TypeScript, Vite, and Tailwind CSS. It provides:
+- Service browsing and discovery
+- Technician booking system
+- User and technician dashboards
+- Admin management panel
+- Real-time notifications
 
-There are several ways of editing your application.
+## Quick Start
 
-**Use Lovable**
+### Prerequisites
+- Node.js (v18 or higher)
+- npm
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation & Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd localfix-trusted-repairs
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Building for Production
 
-**Use GitHub Codespaces**
+```sh
+# Build for GitHub Pages (production)
+npm run build:github
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Build for local testing
+npm run build
 
-## What technologies are used for this project?
+# Preview the production build locally
+npm run preview
+```
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is automatically deployed to GitHub Pages using GitHub Actions. 
 
-## How can I deploy this project?
+### Manual Deployment Steps:
+1. Push code to main branch: `git push origin main`
+2. GitHub Actions will automatically build and deploy to GitHub Pages
+3. Visit: https://sibin05.github.io/localfix-trusted-repairs/
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### GitHub Pages Configuration:
+- Source: GitHub Actions
+- Branch: main
+- Build folder: dist
 
-## Can I connect a custom domain to my Lovable project?
+## Available Scripts
 
-Yes, you can!
+- `npm run dev` - Start development server
+- `npm run build:github` - Build for GitHub Pages deployment
+- `npm run build` - Build for production (local)
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+src/
+├── pages/        # Route pages (Home, Services, Booking, etc.)
+├── components/   # Reusable React components
+├── lib/          # Utilities, types, and mock data
+├── hooks/        # Custom React hooks
+├── App.tsx       # Main application component
+└── main.tsx      # Application entry point
+```
+
+## Technologies Used
+
+- **Framework**: React 18
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Routing**: React Router v6
+- **Animation**: Framer Motion
+- **Icons**: Lucide React
+- **Form Handling**: React Hook Form
+- **HTTP Client**: TanStack React Query
+- **Testing**: Vitest
+- **Linting**: ESLint
+
+## Features
+
+- 🔍 Service search and filtering
+- 👔 Browse verified technicians with ratings
+- 📅 Easy booking system with date/time selection
+- 👤 User dashboard for managing bookings
+- 🔧 Technician dashboard for handling requests
+- 🏢 Admin panel for system management
+- 📱 Mobile-responsive design
+- ⚡ Fast load times with code splitting
+- 🎨 Modern UI with smooth animations
+
+## Environment Setup
+
+### Environment Variables
+
+Create a `.env.local` file if needed for any API endpoints (currently using mock data only).
+
+## Contributing
+
+1. Create a feature branch: `git checkout -b feature/your-feature`
+2. Commit changes: `git commit -am 'Add new feature'`
+3. Push to branch: `git push origin feature/your-feature`
+4. Submit a pull request
+
+## License
+
+This project is open source and available under the MIT License.
