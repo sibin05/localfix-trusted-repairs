@@ -5,11 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isGithubPages = process.env.GITHUB_PAGES === "true" || process.env.VITE_BASE_PATH !== undefined;
-  const base = isGithubPages ? "/localfix-trusted-repairs/" : "/";
-  
   return {
-    base,
+    base: process.env.VITE_BASE_PATH || "/",
     server: {
       host: "::",
       port: 8080,
@@ -33,9 +30,6 @@ export default defineConfig(({ mode }) => {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
-    },
-    define: {
-      "__BASE_PATH__": JSON.stringify(base),
     },
   };
 });

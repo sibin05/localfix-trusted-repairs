@@ -18,12 +18,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  const basename = import.meta.env.BASE_URL;
+  
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={__BASE_PATH__}>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
@@ -41,6 +44,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
